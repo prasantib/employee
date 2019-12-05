@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Department</title>
+</head>
+<body>
+<h4>New Department Registration</h4>
+<form autocomplete="off"
+      action="#"
+      th:action="@{/register}"
+      th:object="${department}" method="post">
+
+    Department Name <mark><strong>
+    <span th:if="${#fields.hasErrors('departmentName')}"
+          th:errors="*{departmentName}">Department Name Error</span></strong></mark>
+    <input type="text" id="departmentName" placeholder="Department Name"
+           th:field="*{departmentName}" /><br />
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</body>
+</html>
