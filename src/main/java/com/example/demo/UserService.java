@@ -34,6 +34,8 @@ public class UserService {
         return userRepository.findByUsername(username);
     }
 
+    public Long countByUsername(String username){return  userRepository.countByUserName(username);}
+
     public void saveUser(User user) {
         user.setRoles(Arrays.asList(roleRepository.findByRole("USER")));
         user.setEnabled(true);
